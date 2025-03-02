@@ -48,10 +48,11 @@ with st.expander("Check the complete dataset:"):
 # ----- Data transformation -----
 
 # TODO: Ex 3.2: Create a new column called `AvgTemperatureCelsius` that contains the temperature in Celsius degrees.
-if "AvgTemperatureF" in temps_df.columns:
-    temps_df["AvgTemperatureCelsius"] = (temps_df["AvgTemperatureF"] - 32) * 5 / 9
+if "AvgTemperatureFahrenheit" in temps_df.columns:
+    temps_df["AvgTemperatureCelsius"] = (temps_df["AvgTemperatureFahrenheit"] - 32) * 5 / 9
 else:
-    st.error(f"Error: La columna 'AvgTemperatureF' no está en el dataset. Columnas disponibles: {temps_df.columns}")
+    st.error(f"Error: La columna 'AvgTemperatureFahrenheit' no está en el dataset. Columnas disponibles: {temps_df.columns}")
+
 
 
 # ----- Extracting some basic information from the dataset -----
