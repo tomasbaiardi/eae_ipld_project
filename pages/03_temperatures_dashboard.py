@@ -51,9 +51,7 @@ with st.expander("Check the complete dataset:"):
 if "AvgTemperatureF" in temps_df.columns:
     temps_df["AvgTemperatureCelsius"] = (temps_df["AvgTemperatureF"] - 32) * 5 / 9
 else:
-    st.error("Error: La columna 'AvgTemperatureF' no está en el dataset.")
-
-temps_df["AvgTemperatureCelsius"] = (temps_df["AvgTemperatureF"] - 32) * 5 / 9
+    st.error(f"Error: La columna 'AvgTemperatureF' no está en el dataset. Columnas disponibles: {temps_df.columns}")
 
 
 # ----- Extracting some basic information from the dataset -----
