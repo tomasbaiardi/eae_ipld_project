@@ -24,26 +24,24 @@ st.divider()
 def load_data():
     data_path = "data/netflix_titles.csv"
 
-    # Try loading the dataset
+    
     try:
         movies_df = pd.read_csv(data_path, index_col="show_id")
     except Exception as e:
-        st.error(f"❌ Error loading dataset: {e}")
-        return pd.DataFrame()  # Return an empty DataFrame if loading fails
+        return pd.DataFrame()  
 
-    # ✅ Debugging print statements
-    st.write("🔍 **Data Preview:**")
-    st.write(movies_df.head())  # Show first rows
-    st.write("📊 **Dataset Shape:**", movies_df.shape)  # Show dataset size
-
-    return movies_df  # Return DataFrame
+    return movies_df  
 
 # Load the dataset
 movies_df = load_data()
 
-   # TODO: Ex 2.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
 
-    return movies_df   # a Pandas DataFrame
+with st.expander("🔍 Check the dataset preview:"):
+    st.write("📊 **Dataset Shape:**", movies_df.shape)
+    st.dataframe(movies_df.head())  
+    
+
+
 
 
 # Displaying the dataset in a expandable table
@@ -64,10 +62,11 @@ num_missing_directors = movies_df["director"].isna().sum()
 n_countries = movies_df["country"].nunique()
 
 # TODO: Ex 2.5: How many characters long are on average the title names?
-if "title" in df.columns:
-    avg_title_length = df["title"].str.len().mean()
+if "title" in movies_df.columns:
+    avg_title_length = movies_df["title"].str.len().mean()
 else:
     avg_title_length = None
+
 
 
 # ----- Displaying the extracted information metrics -----
@@ -93,10 +92,11 @@ year = cols2[0].number_input("Select a year:", min_year, max_year, 2005)
 
 # TODO: Ex 2.6: For a given year, get the Pandas Series of how many movies and series 
 # combined were made by every country, limit it to the top 10 countries.
-if "country" in df.columns and "release_year" in df.columns:
-    top_10_countries = df[df["release_year"] == year]["country"].value_counts().head(10)
+if "country" in movies_df.columns and "release_year" in movies_df.columns:
+    top_10_countries = movies_df[movies_df["release_year"] == year]["country"].value_counts().head(10)
 else:
     top_10_countries = None
+
 
 # print(top_10_countries)
 if top_10_countries is not None:
