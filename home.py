@@ -52,17 +52,17 @@ def home_page():
 
     # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
     st.write("""
-    - 🧑‍💻 I am a <"Data Analyst"> 
+    - 🧑‍💻 I am a Data Analyst
 
-    - 🛩️ prev: <Lexus Manager>
+    - 🛩️ prev: Lexus Manager
 
-    - ❤️ <Football>
+    - ❤️ Football
 
-    - 🤖 <None>
+    - 🤖 None
 
-    - 🏂 <Weightlifting>
+    - 🏂 Weightlifting
 
-    - 📫 How to reach me: <baiardi1996@gmail.com>
+    - 📫 How to reach me: baiardi1996@gmail.com
 
     - 🏠 Barcelona
     """)
