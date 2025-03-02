@@ -54,13 +54,13 @@ def home_page():
     st.write("""
     - 🧑‍💻 I am a Data Analyst
 
-    - 🛩️ prev: Lexus Manager
+    - 🛩️ Previous experience in KPI interpretation, performance tracking and process optimization
 
-    - ❤️ Football
+    - ❤️ I have a passion for travelling and experiencing new cultures
 
-    - 🤖 None
+    - 🤖 Dashboards
 
-    - 🏂 Weightlifting
+    - 🏂 Weightlifting, tennis, football
 
     - 📫 How to reach me: baiardi1996@gmail.com
 
